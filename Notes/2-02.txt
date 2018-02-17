@@ -1,0 +1,105 @@
+Supervised Learning - learning from labeled data
+Classification - predicts discrete(categorical) value output
+Regression - predicts continuous(numeric) valued output
+            - target
+
+The Problem of Over-fitting:
+- Occurs when the predictive model fits too much
+- Starts to learn useless or harmful data
+- Provides:
+    a. excellent accuracy for training data
+    b. poor accuracy for real data
+
+- Occurs:
+1. having too many features
+2. high order model
+
+- Under-fit *(High Bias) Model
+- Ideal fit Model
+- Over-fit *(High Variance) Model
+
+Address Over-fitting:
+  - Approach 1: Dimensionality Reduction:
+    - Reduce the number of features x(e.g. instead of using 20 features for prediction, use only the best 3)
+      i. Manually Select which features to keep
+      ii. Detecting the best features using automated Feature Selection and/or DR algorithms (covered later)
+    - Approach 2: Regularization:
+      i. Keep all features, but reduce the magnitude/values of parameters of the model to simplify the model
+
+Ensemble learning:
+  - a popular and effective approach to improve the accuracy and performance of machine learning problem
+  ex: Construct a strong classifier by combining several weak classifiers
+
+  - The key in Ensembles is diversity and not necessarily high accuracy of the base classifiers
+
+Different Types of Ensemble Learning:
+1. Different Learning algorithms
+2. Different choice of learning parameters
+3. Different Features - (Random Forest)
+4. Different subsets
+5. Different sub-problems
+
+2 main Approaches to combining:
+  a. Voting - classifiers are combined in a static way
+    - Each base-level classifier gives a vote for its prediction
+    - Plurality vote: The final decision for each data sample is made based on the majority of votes
+    *Weight can be added to votes
+
+    ex: 0.7^3 + (0.7*0.7*0.3) + (0.7*0.7*0.3) + (0.7*0.7*0.3) = 0.78
+
+    In practice the accuracy is usually lower than theory because classifiers are not completely independent and random
+
+  b. Stacking
+    - classifiers are combined in a data-driven dynamic way
+    - An upper level machine learning method is used to learn how to combine the prediction results of the base level classifiers
+    - The upper level classifier is used to make the final decision from the predictions of the base-level classifiers
+
+  c. Cascading:
+    - classifiers are combined in a n iterative way.
+    - At each iteration,
+      the training dataset is extended or modified based on the prediction results obtained in the previous iterations.
+    * Later
+
+    Advantages and Disadvantages:
+      A.
+        - improve prediction and performance and accuracy
+        - robust to over-fitting
+        - no too much parameter tuning
+
+      D.
+        - The combined classifier is not so transparent (Black Box)
+        - Not a compact representation
+
+Three popular Approaches to Ensemble Learning:
+  1. Bagging (Bootstrap Aggregation): was first proposed by Leo Breiman to improve the classifier results by combining
+      Classifications of randomly generated training sets.
+
+  2. Boosting: to build a strong classifier using a set of extremely weak base classifiers (with accuracy of slightly better than
+                                                                                              random guess)
+  3. Random SubSpace: *later
+
+1. Bagging (4 Main Steps):
+  Step 1: Suppose we have a Training Dataset S of size N. Bootstrapping generates L new training sets each of size of M,
+          by sampling from the original dataset S randomly and with replacement.
+      * Sampling with replacement
+
+  Step 2: The L new Training sets, will be used to train L learners.
+
+  Step 3: Given a new unknown data sample, The L trained models will be used to make prediction for the new sample.
+
+  Step 4: For Classification, we use voting.
+          For Regression, we use Averaging method. Median is sometimes used to get rid of outliers. <--- idiot results
+
+Important Notes about Bagging:
+  - Bias: Expected error due to inaccurate model in the learning algorithm
+          that may cause to miss the relations between features and outputs (under-fit model)
+  - Variance: Expected error due to particular training sets, and high sensitivity of the system
+              to small fluctuations in the training sets (over-fit)
+      * Bagging works because it reduces variance. GOOD APPROACH WHEN DEALING WITH O.F.
+
+Boosting: tries to build a strong classifier using a set of weak base classifiers. Resolves the problem of underfitting.
+
+Boosting is an iterative procedure to adaptively change distribution of training data
+         by focusing more on previously misclassified data samples.
+         - AdaBoosting
+         * Produces very good results while using very poor classifiers

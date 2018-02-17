@@ -1,0 +1,17 @@
+When does a machine learning algorithm has error?
+  - model is under-fit (high bias)
+  - model is over-fit (high variance)
+
+Random Forest: is an ensemble learning method.
+    - combines several decision trees at training stage,
+      and then combines the prediction results.
+    - resolves overfitting
+    - reduces variance and instability
+
+Key Notes:
+  1. Uses Bootstrap Sampling to generate several training datasets
+     used to train several decision trees.
+  2. Uses a random selection of features for split on at each node of each decision tree.
+
+Bagging - we try to make learners diverse by varying samples (Bootstrapping)
+Random Forest - not only uses Bootstrapping but amplifies diversity by including key features

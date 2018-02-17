@@ -1,0 +1,78 @@
+Data science - combination of data processing (big data, data analytics, data analysis)
+extracting knowledge from large scale data
+data analysis - analyze data, statistical data
+data analytics - machine learning
+
+Bagging and Boosting (interview questions)
+
+Main Concepts:
+Classification vs Regression *Important*
+data - all bits and bytes you can collect
+knowledge - useful parts of the data
+newspaper is data, I am interested in the sports section, so that section is knowledge for me
+
+machine learning - designing and constructions methods that learn from existing data and make predictions on future data
+KNN, decision tree, linear regression,
+
+Feature = Dimensional Labels
+Training data - data from the past
+Labels - Key
+
+Terminology
+Supervised learning: Learning from labeled observations. The algorithm is presented with training inputs and their known labels,
+                     and the goal is totrain a model that maps future inputs to new Labels
+Unsupervised learning: learning from unlabeled observations, Discover hidden patterns and latent structure from features alone, data exploration.
+
+Training stage(modeling): building a predictive model based on the training dataset.
+- model does not have to be perfect
+- we should tolerate mistakes
+
+Testing stage (Prediction): Applying trained model to forecast what is going to happen in the future.
+
+Why/When to use unsupervised learning?
+When the lavel is unknown
+when the data is unabeled because we cannot afford labeling the dataset
+sometimes we dont care about the label we just to categorize the dataset
+sometimes applying an unsupervised algorithm prior to a Supervised learning can improve the prediction results
+sometimes we want to manipulate data without looking at Labels
+
+learning - supervised learning
+
+accuracy is the amount of correctly counted data
+
+classification - predict a discrete valuesd output for each observation
+labels are discrete (categorical)
+labels can be binary (output is binary) can be non binary (more than two categories)
+
+regression - predict a continuous values output for each observations
+labels are continuous
+
+root mean squared error - average error
+error - used in regression
+ex: predict house costs 900k but costs 1mil, error is -100k
+
+feature vector - the vector of all features for one single observation
+
+what is the main advantage of decisions trees
+it is understandable by humans
+
+important concepts measuring information
+amount of information has an inverse relation to the probability of that event
+example: the sun will rise tomorrow morning, an eclipse occurs tomorrow
+
+when two different events happen, the joint probability is the multiplication of the two probabilities. However the total information about two
+independent events should be the total summation of the two pieces of information.
+
+entropy - uncertainty  or unpredictabillity
+entropy is unexpected information
+
+information gain - as the reductionn in entropy
+decision trees
+advantage:
+easily interpretable by human
+handles both numerical and categorical data
+it is a parametric algorithm
+
+disadvantages
+very prone to overfitting
+heuristic training techniques
