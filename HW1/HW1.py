@@ -36,9 +36,7 @@ def grunt_work():
     results['actual'] = y_test
     results['prediction'] = y_predict
 
-    # print(results)
-    # for res in y_predict:
-    #     print(res)
+    print(dt_score)
 
     b_results = []
 
@@ -73,13 +71,37 @@ def grunt_work():
         voting.append(vote_col)
 
     b_score = accuracy_score(y_test, voting)
-    print(b_score)
 
     bagging_results = pd.DataFrame()
-
     bagging_results['actual'] = y_test
     bagging_results['prediction'] = voting
 
-    print(bagging_results)
+    print(b_score)
+
+    my_AdaBoost = AdaBoostClassifier(n_estimators=19, random_state=2)
+    my_AdaBoost.fit(X_train, y_train)
+
+    ab_predict = my_AdaBoost.predict(X_test)
+
+    ab_score = accuracy_score(y_test, ab_predict)
+
+    ab_results = pd.DataFrame()
+    ab_results['actual'] = y_test
+    ab_results['prediction'] = ab_predict
+
+    print(ab_score)
+
+    my_RandomForest = RandomForestClassifier(n_estimators=19, bootstrap=True, random_state=2)
+    my_RandomForest.fit(X_train, y_train)
+
+    rf_predict = my_RandomForest.predict(X_test)
+
+    rf_score = accuracy_score(y_test, rf_predict)
+
+    rf_results = pd.DataFrame()
+    rf_results['actual'] = y_test
+    rf_results['prediction'] = rf_predict
+
+    print(rf_score)
 
 grunt_work()
