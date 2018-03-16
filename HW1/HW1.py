@@ -10,6 +10,7 @@ import pandas as pd
 
 def grunt_work():
 
+    # create a DataFrame from Cancer_small.csv
     cancer_df = pd.read_csv('Cancer_small.csv')
 
     # create a list of feature names from Start to End feature *exclusive
@@ -24,7 +25,10 @@ def grunt_work():
     # create testing and training DataFrames
     X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.3, random_state=2)
 
+    # create a decision tree classifier object
     my_DecisionTree = DecisionTreeClassifier(random_state=2)
+
+    # use fit to the model using the training dataset
     my_DecisionTree.fit(X_train, y_train)
 
     y_predict = my_DecisionTree.predict(X_test)
