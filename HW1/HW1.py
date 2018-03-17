@@ -4,7 +4,10 @@ from sklearn.ensemble import AdaBoostClassifier
 from sklearn.ensemble import RandomForestClassifier
 from sklearn.metrics import accuracy_score
 from sklearn.utils import resample
-import numpy as np
+from sklearn.ensemble import AdaBoostClassifier
+from sklearn.ensemble import RandomForestClassifier
+from sklearn.metrics import accuracy_score
+from sklearn.utils import resample
 import pandas as pd
 
 
@@ -107,5 +110,6 @@ def grunt_work():
     rf_results['prediction'] = rf_predict
 
     print(rf_score)
+
 
 grunt_work()
